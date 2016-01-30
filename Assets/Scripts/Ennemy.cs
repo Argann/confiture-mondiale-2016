@@ -13,8 +13,11 @@ public class Ennemy : MonoBehaviour {
 
 	private GameObject parent;
 
+	private GameObject player;
+
 	// Use this for initialization
 	void Start () {
+		this.player = GameObject.FindGameObjectWithTag ("Player");
 		this.health = maxHealth;
 		GameObject attacktrigger = this.transform.Find ("AttackTrigger").gameObject;
 		attacktrigger.GetComponent<BoxCollider2D> ().size = new Vector2 (attackRange, 0.7f);
@@ -29,6 +32,7 @@ public class Ennemy : MonoBehaviour {
 		this.healthslider.transform.localScale = new Vector3((float)health / maxHealth, 1); 
 
 		if (this.health <= 0) {
+			this.player.GetComponent<Player>().KillEnemies(100);
 			Destroy(this.parent);
 		}
 	}
