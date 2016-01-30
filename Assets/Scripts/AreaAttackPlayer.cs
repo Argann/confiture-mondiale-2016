@@ -26,7 +26,7 @@ public class AreaAttackPlayer : MonoBehaviour {
         float y2 = center.y + (pc.y - center.y) * Mathf.Cos(rTheta) + (pc.x - center.x) * Mathf.Sin(rTheta);
         right = new Vector2(x2, y2);
 
-        front = new Vector2(distance / norm(pc, center) * (pc.x + center.x), distance / norm(pc, center) * (pc.y + center.y));
+        front = new Vector2(Mathf.Cos(Mathf.Atan2(pc.y - center.y, pc.x - center.x)) * distance, Mathf.Sin(Mathf.Atan2(pc.y - center.y, pc.x - center.x)) * distance);
 
         polygon.points = new Vector2[]{ center,left, front, right};
     }
@@ -38,7 +38,7 @@ public class AreaAttackPlayer : MonoBehaviour {
         //calcul pointeur souris
         Vector3 pc = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         //calcul distance pts central
-        front = new Vector2( distance/norm(pc, center) *(pc.x + center.x ), distance / norm(pc, center) * (pc.y + center.y));
+        front = new Vector2(Mathf.Cos(Mathf.Atan2(pc.y - center.y, pc.x - center.x)) * distance, Mathf.Sin(Mathf.Atan2(pc.y - center.y, pc.x - center.x)) * distance);
 
         //calcul pts gauche
         float x = center.x + (front.x - center.x) * Mathf.Cos(-rTheta) - (front.y - center.y) * Mathf.Sin(-rTheta);
