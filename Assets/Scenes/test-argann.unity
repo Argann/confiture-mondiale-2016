@@ -323,10 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea6f73ca56a8884cb19dd3984e40521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointHomme: {fileID: 679717373}
   theta: 45
   distance: 2
-  polygon: {fileID: 679717378}
 --- !u!60 &679717378
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -465,10 +463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea6f73ca56a8884cb19dd3984e40521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointHomme: {fileID: 0}
   theta: 45
   distance: 2
-  polygon: {fileID: 1082338895}
 --- !u!212 &1082338897
 SpriteRenderer:
   m_ObjectHideFlags: 0
