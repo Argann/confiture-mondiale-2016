@@ -3,38 +3,57 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class GUIManager : MonoBehaviour {
-	public Text level;
-	public Image experience;
+	private Text level;
+	private Slider experience;
+
 	private int niveau;
 	private int xp;
-	private float maxWidth;
-	private const int ratio = 100;
+	private int ratio = 1000;
 
 	// Use this for initialization
 	void Start () {
+		level = GameObject.FindWithTag ("LevelText").GetComponent<Text> ();
+		experience = GameObject.FindWithTag ("XPBar").GetComponent<Slider> ();
 		niveau = int.Parse(level.text);
-		maxWidth = experience.rectTransform.sizeDelta.x;
 		xp = ratio;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Space)) {
+		experience.maxValue = ratio;
+		/* 2 Commandes pour tester la XPBar, supprimer quand les tests ne seront plus necessaires
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			AddXP (10);
+		}
+		if (Input.GetKey (KeyCode.DownArrow)) {
+			AddXP (-10);
+		}
+		//*/
+		experience.value = xp;
+		level.text = niveau.ToString();
+	}
+
+	public void AddXP(int xpRecue) {
+		xp -= xpRecue;
+		if (xp < 1) {
 			if (niveau > 1) {
-				xp--;
-				if (xp == 0) {
-					xp = ratio;
-					niveau--;
-				}
+				xp = ratio;
+				niveau--;
 			} else {
 				xp = 0;
 			}
 		}
-		if (niveau > 1) {
-			experience.rectTransform.sizeDelta = new Vector2 (maxWidth * xp / ratio, experience.rectTransform.sizeDelta.y);
-		} else {
-			experience.rectTransform.sizeDelta = new Vector2 (0, experience.rectTransform.sizeDelta.y);
+		if (xp > ratio) {
+			if (niveau < 10) {
+				xp = 0;
+				niveau++;
+			} else {
+				xp = ratio;
+			}
 		}
-		level.text = niveau.ToString();
+	}
+
+	public void SetRatio(int xpMax) {
+		ratio = xpMax;
 	}
 }
