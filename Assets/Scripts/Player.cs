@@ -55,22 +55,28 @@ public class Player : MonoBehaviour {
     //A déclencher quand le joueur est touché
     public void Touched(int damage)
     {
-        xp += damage;
-        guiManager.XP = xp;
-        if (xp >= xpMax)
+        if (this.level < 100)
         {
-            NewLevel(level + 1, true);
+            xp += damage;
+            guiManager.XP = xp;
+            if (xp >= xpMax)
+            {
+                NewLevel(level + 1, true);
+            }
         }
     }
 
     //A déclencher quand le joueur tue un/des ennemi(s)
     public void KillEnemies(int xpMonster, int count = 1)
     {
-        xp -= count * xpMonster;
-        guiManager.XP = xp;
-        if (xp <= 0)
+        if (this.level < 100)
         {
-            NewLevel(level - 1, false);
+            xp -= count * xpMonster;
+            guiManager.XP = xp;
+            if (xp <= 0)
+            {
+                NewLevel(level - 1, false);
+            }
         }
     }
 }
