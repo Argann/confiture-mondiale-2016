@@ -6,7 +6,8 @@ public class AttackEnemy : MonoBehaviour {
 
     public int damageAttack;
     public float cooldown = 1f;
-    private float cooldownT ;
+    [HideInInspector] // Hides var below
+    public float cooldownT ;
 
 
     private List<GameObject> ennemy_list;
