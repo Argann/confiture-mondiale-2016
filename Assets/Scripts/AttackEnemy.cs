@@ -36,12 +36,14 @@ public class AttackEnemy : MonoBehaviour {
 	}
 
 	void Update(){
+
         cooldownT -= Time.deltaTime;
 
 		if (Input.GetMouseButtonDown (0) && cooldownT <= 0) {
+		 this.player.arms_animator.SetBool("isAttacking", true);
+
             cooldownT = cooldown;
             List<GameObject> ennemy_list2 = new List<GameObject>(this.ennemy_list);
-
             foreach (GameObject enemy in ennemy_list2){
                 if(enemy != null){
                     enemy.GetComponent<Ennemy>().Blesser(damageAttack);
@@ -49,6 +51,11 @@ public class AttackEnemy : MonoBehaviour {
                     this.ennemy_list.Remove(enemy);
                 }
 			}
+
 		}
+		if (Input.GetMouseButtonUp (0)) {
+			this.player.arms_animator.SetBool("isAttacking", false);
+		}
+	
 	}
 }
