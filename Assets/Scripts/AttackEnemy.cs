@@ -53,7 +53,7 @@ public class AttackEnemy : MonoBehaviour {
 			}
 
 		}
-		if (Input.GetMouseButtonUp (0)) {
+		if (cooldownT <= cooldown-0.2f || Input.GetMouseButtonUp (0) ) {
 			this.player.arms_animator.SetBool("isAttacking", false);
 		}
 	
