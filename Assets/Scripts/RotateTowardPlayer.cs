@@ -4,19 +4,20 @@ using System.Collections;
 public class RotateTowardPlayer : MonoBehaviour {
 
 	private GameObject player;
-	public float speed;
+	private GameObject parent;
 	private bool go;
 
 	void Start(){
 		player = GameObject.FindGameObjectWithTag ("Player");
+		parent = transform.parent.gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (go) {
-			Vector3 dir = player.transform.position - transform.position;
+			Vector3 dir = player.transform.position - parent.transform.position;
 			float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+			parent.transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 		}
 	}
 

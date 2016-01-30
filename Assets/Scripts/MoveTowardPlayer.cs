@@ -11,12 +11,13 @@ public class MoveTowardPlayer : MonoBehaviour {
 
 	void Start(){
 		player = GameObject.FindGameObjectWithTag ("Player");
+		parent = transform.parent.gameObject;
 	}
 	// Update is called once per frame
 	void Update () {
 		if (go) {
 			float step = speed * Time.deltaTime;
-			transform.position = Vector3.MoveTowards (transform.position, player.transform.position, step);
+			parent.transform.position = Vector3.MoveTowards (parent.transform.position, player.transform.position, step);
 		}
 	}
 

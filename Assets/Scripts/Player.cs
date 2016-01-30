@@ -13,6 +13,11 @@ public class Player : MonoBehaviour {
         get { return level; }
         set { level = value; }
     }
+
+	//Attaque du joueur
+	public int attackPower;
+
+
    
     //xpMax du niveau en cours (xpMin = 0)
     private float xpMax
