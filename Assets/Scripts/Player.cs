@@ -23,9 +23,9 @@ public class Player : MonoBehaviour {
 	
     void Start()
     {
+        guiManager.Level = level;
         guiManager.Ratio = xpMax;
         guiManager.XP = xp;
-        guiManager.Level = level;
     }
 
 	// Update is called once per frame
