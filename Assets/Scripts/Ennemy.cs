@@ -20,11 +20,11 @@ public class Ennemy : MonoBehaviour {
 
 	void Update() {
 		this.healthslider.value = this.health;
+		if (Camera.current != null && this.transform.position != null) {
+			Vector3 screenPosition = Camera.current.WorldToScreenPoint (this.transform.position);
+			screenPosition.y += 50;
+			this.healthslider.transform.position = screenPosition;
+		}
 	}
-
-	void OnGUI(){
-		Vector3 screenPosition = Camera.current.WorldToScreenPoint (transform.position);
-		screenPosition.y += 50;
-		this.healthslider.transform.position = screenPosition;
-	}
+	
 }
