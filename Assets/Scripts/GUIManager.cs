@@ -41,7 +41,6 @@ public class GUIManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		levelText = GameObject.FindWithTag ("LevelText").GetComponent<Text> ();
-        print(levelText);
 		experience = GameObject.FindWithTag ("XPBar").GetComponent<Slider> ();
 		level = int.Parse(levelText.text);
 		xp = ratio;

@@ -8,6 +8,10 @@ TagManager:
   - XPBar
   - LevelText
   - Enemy
+  - Spike
+  - FlameThrower
+  - SlowZone
+  - CanonBall
   layers:
   - Default
   - TransparentFX
