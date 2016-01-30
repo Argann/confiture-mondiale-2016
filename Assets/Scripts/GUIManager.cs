@@ -5,6 +5,44 @@ using System.Collections;
 public class GUIManager : MonoBehaviour {
 	private Text levelText;
 	private Slider experience;
+<<<<<<< HEAD
+
+	private int level;
+    public int Level
+    {
+        get { return level; }
+        set
+        {
+            level = value;
+            levelText.text = level.ToString();
+        }
+    }
+
+	private int xp;
+    public int XP
+    {
+        get { return xp; }
+        set
+        {
+            xp = value;
+            experience.value = xp;
+        }
+    }
+
+    private int ratio = 1000;
+    public int Ratio
+    {
+        get { return ratio; }
+        set {
+            ratio = value;
+            experience.maxValue = ratio;
+        }
+    }
+
+	// Use this for initialization
+	void Start () {
+		levelText = GameObject.FindWithTag ("LevelText").GetComponent<Text> ();
+=======
 	
 	private int level;
 	public int Level
@@ -42,6 +80,7 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		levelText = GameObject.FindWithTag ("LevelText").GetComponent<Text> ();
 		print(levelText);
+>>>>>>> 2912c0dd2874c23e3ace3757c7358836af79efc8
 		experience = GameObject.FindWithTag ("XPBar").GetComponent<Slider> ();
 		level = int.Parse(levelText.text);
 		xp = ratio;
@@ -61,4 +100,8 @@ public class GUIManager : MonoBehaviour {
 		//experience.value = xp;
 		//levelText.text = level.ToString();
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2912c0dd2874c23e3ace3757c7358836af79efc8

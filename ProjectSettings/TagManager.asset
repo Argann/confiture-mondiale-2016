@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ennemy
+  - XPBar
+  - LevelText
+  - Enemy
+  - Spike
+  - FlameThrower
+  - SlowZone
+  - CanonBall
   - EnnemyAttackRange
   layers:
   - Default
