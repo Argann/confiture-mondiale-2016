@@ -511,7 +511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!61 &724779211
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -630,45 +630,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1458495301 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 164070, guid: 12be07144e62d8a4bbfbc972095c050d, type: 2}
-  m_PrefabInternal: {fileID: 320061387}
---- !u!114 &1458495302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1458495301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a390d9acd01d854baba36093a2bd2cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1458495304}
---- !u!50 &1458495303
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1458495301}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1458495304 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11486554, guid: 12be07144e62d8a4bbfbc972095c050d,
-    type: 2}
-  m_PrefabInternal: {fileID: 320061387}
-  m_Script: {fileID: 11500000, guid: 6d34bd9f3cee3d342bab1e174c3f3f9f, type: 3}
 --- !u!1 &1479660011
 GameObject:
   m_ObjectHideFlags: 0
