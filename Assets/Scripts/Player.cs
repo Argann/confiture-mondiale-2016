@@ -7,35 +7,29 @@ public class Player : MonoBehaviour {
     public float speed;
 
     //Niveau du joueur
-    private int level;
-    public int Level
-    {
-        get { return level; }
-        set { level = value; }
-    }
+    public int level;
    
     //xpMax du niveau en cours (xpMin = 0)
-    private float xpMax
+    private int xpMax
     {
         get { return 10 * level; }
     }
 
     //XP actuel du personnage dans ce niveau
-    private float xp;
-    public float XP
-    {
-        get { return xp; }
-        set { xp = value; }
-    }
+    public int xp;
 
-
-    // Use this for initialization
-    void Start () {
-
-    }
+    //Gestionnaire de l'affichage des infos sur le joueur
+    public GUIManager guiManager;
 	
+    void Start()
+    {
+        guiManager.Ratio = xpMax;
+        guiManager.XP = xp;
+        guiManager.Level = level;
+    }
+
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         //Déplacement du personnage
         Vector2 direction = Vector2.up * Input.GetAxisRaw("up") + Vector2.left * Input.GetAxisRaw("left")
                             + Vector2.down * Input.GetAxisRaw("down") + Vector2.right * Input.GetAxisRaw("right");
@@ -49,29 +43,34 @@ public class Player : MonoBehaviour {
     }
 
     //Permet d'affecter un nouveau niveau au joueur
-    private void NewLevel(int level)
+    private void NewLevel(int level, bool levelup)
     {
         this.level = level;
-        xp = xpMax;
+        xp = (levelup ? 0 : xpMax);
+        guiManager.XP = xp;
+        guiManager.Ratio = xpMax;
+        guiManager.Level = level;
     }
 
     //A déclencher quand le joueur est touché
     public void Touched(int damage)
     {
         xp += damage;
+        guiManager.XP = xp;
         if (xp >= xpMax)
         {
-            NewLevel(level + 1);
+            NewLevel(level + 1, true);
         }
     }
 
     //A déclencher quand le joueur tue un/des ennemi(s)
-    public void KillEnemies(float xpMonster, int count = 1)
+    public void KillEnemies(int xpMonster, int count = 1)
     {
         xp -= count * xpMonster;
+        guiManager.XP = xp;
         if (xp <= 0)
         {
-            NewLevel(level - 1);
+            NewLevel(level - 1, false);
         }
     }
 }
