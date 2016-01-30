@@ -30,7 +30,6 @@ public class AttackEnemy : MonoBehaviour {
 			Debug.Log("LELEL");
 			foreach(GameObject enemy in this.ennemy_list){
 				enemy.GetComponent<Ennemy>().Blesser(player.attackPower);
-				//Debug.Log ("ENNEMY : ", enemy);
 			}
 		}
 	}

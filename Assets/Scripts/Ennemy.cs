@@ -8,7 +8,7 @@ public class Ennemy : MonoBehaviour {
 	public int health;
 	public float visionRange;
 	public float attackRange;
-	public Slider healthslider;
+	public GameObject healthslider;
 
 	private GameObject parent;
 
@@ -23,11 +23,8 @@ public class Ennemy : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		this.healthslider.value = this.health;
 		if (Camera.current != null && this.transform.position != null) {
-			Vector3 screenPosition = Camera.current.WorldToScreenPoint (this.transform.position);
-			screenPosition.y += 50;
-			this.healthslider.transform.position = screenPosition;
+
 		}
 
 		if (this.health <= 0) {
