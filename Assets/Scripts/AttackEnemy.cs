@@ -33,17 +33,17 @@ public class AttackEnemy : MonoBehaviour {
 
 	void Update(){
 		if (Input.GetMouseButtonDown (0)) {
-			Debug.Log("LELEL");
+			this.player.arms_animator.SetBool("isAttacking", true);
 			foreach(GameObject enemy in this.ennemy_list){
-				/*if(enemy == null){
-					this.ennemy_list.Remove(enemy);
-				} else {
-					enemy.GetComponent<Ennemy>().Blesser(damageAttack);
-				}*/
                 if(enemy != null){
                     enemy.GetComponent<Ennemy>().Blesser(damageAttack);
                 }
 			}
+
 		}
+		if (Input.GetMouseButtonUp (0)) {
+			this.player.arms_animator.SetBool("isAttacking", false);
+		}
+	
 	}
 }
