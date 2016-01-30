@@ -29,7 +29,11 @@ public class AttackEnemy : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			Debug.Log("LELEL");
 			foreach(GameObject enemy in this.ennemy_list){
-				enemy.GetComponent<Ennemy>().Blesser(player.attackPower);
+				if(enemy == null){
+					this.ennemy_list.Remove(enemy);
+				} else {
+					enemy.GetComponent<Ennemy>().Blesser(player.attackPower);
+				}
 			}
 		}
 	}
