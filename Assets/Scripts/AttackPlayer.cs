@@ -3,11 +3,9 @@ using System.Collections;
 
 public class AttackPlayer : MonoBehaviour {
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Ennemy"))
-        {
-           Destroy(other.gameObject);
-        }
-    }
+	void OnTriggerStay2D(Collider2D coll){
+		if (coll.gameObject.CompareTag ("Player")) {
+			coll.gameObject.GetComponent<Player>().Touched(5);
+		}
+	}
 }

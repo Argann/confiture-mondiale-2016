@@ -12,6 +12,7 @@ TagManager:
   - FlameThrower
   - SlowZone
   - CanonBall
+  - EnnemyAttackRange
   layers:
   - Default
   - TransparentFX
