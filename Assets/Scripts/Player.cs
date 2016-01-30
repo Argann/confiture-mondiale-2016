@@ -16,8 +16,6 @@ public class Player : MonoBehaviour {
 
 	//Attaque du joueur
 	public int attackPower;
-
-
    
     //xpMax du niveau en cours (xpMin = 0)
     private float xpMax

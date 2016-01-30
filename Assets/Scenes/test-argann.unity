@@ -463,8 +463,8 @@ Transform:
   m_LocalPosition: {x: 0, y: .699999988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1834240988}
-  m_RootOrder: 3
+  m_Father: {fileID: 1399542396}
+  m_RootOrder: 1
 --- !u!212 &912842871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -678,6 +678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1834240988}
+  - {fileID: 912842870}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1834240987
@@ -711,7 +712,6 @@ Transform:
   - {fileID: 342339708}
   - {fileID: 346858058}
   - {fileID: 434550911}
-  - {fileID: 912842870}
   m_Father: {fileID: 1399542396}
   m_RootOrder: 0
 --- !u!50 &1834240989
@@ -758,10 +758,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 5
-  health: 100
+  maxHealth: 100
   visionRange: 10
   attackRange: .5
-  healthslider: {fileID: 0}
+  healthslider: {fileID: 912842869}
 --- !u!1 &1930327047
 GameObject:
   m_ObjectHideFlags: 0
