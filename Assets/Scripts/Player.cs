@@ -9,7 +9,6 @@ public class Player : MonoBehaviour {
 	//Niveau du joueur
 	public int level;
 
-<<<<<<< HEAD
     //Vitesse du joueur
     public float speed;
 
@@ -87,7 +86,10 @@ public class Player : MonoBehaviour {
         }
     }
 }
-=======
+	public Animator legs_animator;
+
+	public Animator arms_animator;
+
 	public int attackPower;
 	
 	//xpMax du niveau en cours (xpMin = 0)
@@ -115,6 +117,9 @@ public class Player : MonoBehaviour {
 		Vector2 direction = Vector2.up * Input.GetAxisRaw("up") + Vector2.left * Input.GetAxisRaw("left")
 			+ Vector2.down * Input.GetAxisRaw("down") + Vector2.right * Input.GetAxisRaw("right");
 		float step = speed * Time.deltaTime;
+
+		this.legs_animator.SetBool ("isWalking", !(direction == Vector2.zero));
+
 		transform.position = Vector3.MoveTowards(transform.position, (Vector2)transform.position + direction, step);
 		
 		//Le sprite suit des yeux le curseur de la souris
@@ -136,7 +141,6 @@ public class Player : MonoBehaviour {
 	//A déclencher quand le joueur est touché
 	public void Touched(int damage)
 	{
-		Debug.Log ("LELELELLELFNEKNFEHFKEHFHNEFHEF");
 		if (this.level < 100)
 		{
 			xp += damage;
@@ -162,4 +166,3 @@ public class Player : MonoBehaviour {
 		}
 	}
 }
->>>>>>> 2912c0dd2874c23e3ace3757c7358836af79efc8
