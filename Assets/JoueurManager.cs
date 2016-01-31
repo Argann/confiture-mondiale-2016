@@ -8,27 +8,27 @@ public class JoueurManager : MonoBehaviour {
 
 	void Start(){
 		idAttack = 0;
+		SkillsState.setRequirements ();
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		print (GameObject.FindGameObjectsWithTag ("Attack"));
-        if (Input.GetKeyDown(KeyCode.Alpha1)) idAttack = 0;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) idAttack = 1;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) idAttack = 2;
-		if (Input.GetKeyDown(KeyCode.Alpha4)) idAttack = 3;
-
-      /*  if (previousIdAttack != idAttack){
-			if(GameObject.FindGameObjectsWithTag("Attack")[previousIdAttack].GetComponent<AttackEnemy>() != null)
-				GameObject.FindGameObjectsWithTag("Attack")[previousIdAttack].GetComponent<AttackEnemy>().active =false;
-			else
-				GameObject.FindGameObjectsWithTag("Attack")[previousIdAttack].GetComponent<AttackManager>().active =false;
-		
-			if(GameObject.FindGameObjectsWithTag("Attack")[idAttack].GetComponent<AttackEnemy>() != null)
-				GameObject.FindGameObjectsWithTag("Attack")[idAttack].GetComponent<AttackEnemy>().active =true;
-			else
-				GameObject.FindGameObjectsWithTag("Attack")[idAttack].GetComponent<AttackManager>().active =true;
-        }*/
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			if (SkillsState.isAccessible("wider"))
+				idAttack = 0;
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			if (SkillsState.isAccessible("fireball"))
+				idAttack = 1;
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			if (SkillsState.isAccessible ("around"))
+				idAttack = 2;
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha4)) {
+			if (SkillsState.isAccessible ("shield"))
+				idAttack = 3;
+		}
 	}
 }
