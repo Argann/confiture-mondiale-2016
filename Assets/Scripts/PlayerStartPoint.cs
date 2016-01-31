@@ -7,6 +7,6 @@ public class PlayerStartPoint : MonoBehaviour {
 	void Awake () {
 		GameObject go = GameObject.FindGameObjectWithTag ("Player");
 		go.transform.position = this.transform.position;
-
+		Debug.Log ("Je suis là !");
 	}
 }

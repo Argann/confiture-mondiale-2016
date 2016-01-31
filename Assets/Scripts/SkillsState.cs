@@ -16,7 +16,7 @@ public static class SkillsState {
 		requiredLevelForSkill.Add ("ultimate", 95);
 		requiredLevelForSkill.Add ("widest", 70);
 		requiredLevelForSkill.Add ("aroundest", 70);
-		requiredLevelForSkill.Add ("wider", 50);
+		requiredLevelForSkill.Add ("wider", 0);
 		requiredLevelForSkill.Add ("around", 50);
 		requiredLevelForSkill.Add ("shield", 50);
 		requiredLevelForSkill.Add ("fireball", 20);
