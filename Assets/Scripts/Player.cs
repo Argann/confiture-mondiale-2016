@@ -13,6 +13,11 @@ public class Player : MonoBehaviour {
 	public Animator legs_animator;
 	
 	public Animator arms_animator;
+
+	public GameObject healthbar = null;
+	public bool useHealth = false;
+	public int maxHealth = 0;
+	private int health = 0;
 	
 	public int attackPower;
    
@@ -30,6 +35,9 @@ public class Player : MonoBehaviour {
 	
     void Start()
     {
+		if (useHealth) {
+			health = maxHealth;
+		}
         guiManager = GameObject.Find("GUI").GetComponent<GUIManager>();
         guiManager.Level = level;
         guiManager.Ratio = xpMax;
@@ -53,6 +61,10 @@ public class Player : MonoBehaviour {
     //A déclencher quand le joueur est touché
     public void Touched(int damage)
     {
+		if (useHealth) {
+			health -= damage;
+			healthbar.transform.localScale = new Vector3((float)health / maxHealth, 1);
+		}
 		damage -= shield;
         if (this.level < 100 && damage > 0)
         {
@@ -81,6 +93,13 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (this.guiManager == null) {
+			guiManager = GameObject.Find("GUI").GetComponent<GUIManager>();
+			guiManager.Level = level;
+			guiManager.Ratio = xpMax;
+			guiManager.XP = xp;
+		}
+
 		//Déplacement du personnage
 		Vector2 direction = Vector2.up * Input.GetAxisRaw("up") + Vector2.left * Input.GetAxisRaw("left")
 			+ Vector2.down * Input.GetAxisRaw("down") + Vector2.right * Input.GetAxisRaw("right");
@@ -94,6 +113,14 @@ public class Player : MonoBehaviour {
 		Vector3 targetDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 		float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+		if (this.healthbar != null) {
+			this.healthbar.transform.position = new Vector3(transform.position.x, transform.position.y + 0.7f);
+		}
+
+		if (this.health <= 0 && this.useHealth) {
+			Destroy (this.gameObject);
+		}
 	}
 
 

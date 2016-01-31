@@ -291,6 +291,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22404356, guid: 70fe1ad940fbe6b489f161b452898510, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70fe1ad940fbe6b489f161b452898510, type: 2}
   m_IsPrefabParent: 0
@@ -330,11 +334,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414746, guid: b095506ce5ad52840b9a8072dcba1495, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 32.1
+      value: 32.27
       objectReference: {fileID: 0}
     - target: {fileID: 414746, guid: b095506ce5ad52840b9a8072dcba1495, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -16.1
+      value: -17.2
       objectReference: {fileID: 0}
     - target: {fileID: 414746, guid: b095506ce5ad52840b9a8072dcba1495, type: 2}
       propertyPath: m_LocalPosition.z
@@ -368,6 +372,10 @@ Prefab:
       propertyPath: FadeImg
       value: 
       objectReference: {fileID: 989006826}
+    - target: {fileID: 11478464, guid: b095506ce5ad52840b9a8072dcba1495, type: 2}
+      propertyPath: destroyPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b095506ce5ad52840b9a8072dcba1495, type: 2}
   m_IsPrefabParent: 0

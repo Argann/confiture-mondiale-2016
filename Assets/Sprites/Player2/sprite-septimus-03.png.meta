@@ -1,0 +1,109 @@
+fileFormatVersion: 2
+guid: 484f266e9a84c2341877fa00e5aad8c0
+timeCreated: 1454243027
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprite-septimus-03_0
+    21300002: sprite-septimus-03_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite-septimus-03_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112.5
+        height: 117
+      alignment: 9
+      pivot: {x: 0.43591034, y: 0.40102708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.289913, y: -0.92016983}
+        - {x: -9.289913, y: -1.9201698}
+        - {x: -9.289913, y: -13.92017}
+        - {x: -6.289913, y: -14.92017}
+        - {x: 0.7100868, y: -14.92017}
+        - {x: 0.7100868, y: -0.92016983}
+      - - {x: -2.2899132, y: 3.0798302}
+        - {x: -1.2899132, y: 1.0798302}
+        - {x: 7.710087, y: 1.0798302}
+        - {x: 7.710087, y: 14.07983}
+        - {x: 6.710087, y: 15.07983}
+        - {x: -0.28991318, y: 15.07983}
+        - {x: -2.2899132, y: 14.07983}
+    - name: sprite-septimus-03_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112.5
+        height: 117
+      alignment: 9
+      pivot: {x: 0.4397945, y: 0.40849674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.27311707, y: -1.794117}
+        - {x: -2.726883, y: -3.794117}
+        - {x: -2.726883, y: -13.794117}
+        - {x: 1.2731171, y: -15.794117}
+        - {x: 5.273117, y: -15.794117}
+        - {x: 7.273117, y: -13.794117}
+        - {x: 7.273117, y: -3.794117}
+        - {x: 5.273117, y: -1.794117}
+      - - {x: -8.726883, y: 2.205883}
+        - {x: -7.726883, y: 0.20588303}
+        - {x: 1.2731171, y: 0.20588303}
+        - {x: 1.2731171, y: 13.205883}
+        - {x: 0.27311707, y: 14.205883}
+        - {x: -6.726883, y: 14.205883}
+        - {x: -8.726883, y: 13.205883}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

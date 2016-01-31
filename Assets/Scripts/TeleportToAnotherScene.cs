@@ -10,6 +10,7 @@ public class TeleportToAnotherScene : MonoBehaviour
 	public string level;
 	private bool sceneStarting = true;
 	private bool sceneEnding = false;
+	public bool destroyPlayer = false;
 
 
 	void Awake()
@@ -72,7 +73,11 @@ public class TeleportToAnotherScene : MonoBehaviour
 		if (FadeImg.color.a >= 0.95f) {
 			// ... reload the level
 			GameObject go = GameObject.FindGameObjectWithTag ("PlayerPrefab");
-			DontDestroyOnLoad (go);
+			if (!destroyPlayer) {
+				DontDestroyOnLoad (go);
+			} else {
+				Destroy (go);
+			}
 			SceneManager.LoadScene (level, LoadSceneMode.Single);
 		}
 	}
