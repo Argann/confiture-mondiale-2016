@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TeleportToAnotherScene : MonoBehaviour
 {
 	public Image FadeImg;
-	public float fadeSpeed = 1.5f;
+	public float fadeSpeed = 5f;
 	public string level;
 	private bool sceneStarting = true;
 	private bool sceneEnding = false;
@@ -17,7 +17,7 @@ public class TeleportToAnotherScene : MonoBehaviour
 		FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 		// If the scene is starting...
 		if (sceneStarting)
@@ -63,8 +63,7 @@ public class TeleportToAnotherScene : MonoBehaviour
 
 	public void EndScene()
 	{
-		// Make sure the RawImage is enabled.
-		FadeImg.enabled = true;
+
 
 		// Start fading towards black.
 		FadeToBlack();
@@ -79,6 +78,10 @@ public class TeleportToAnotherScene : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
-		sceneEnding = true;
+		if(coll.gameObject.CompareTag("Player")){
+			sceneEnding = true;
+			FadeImg.enabled = true;
+		}
+
 	}
 }
