@@ -12,15 +12,17 @@ public class CoolDownManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AttackEnemy>() != null)
+		int idAttack = GameObject.Find ("JoueurPrefab").GetComponent<JoueurManager> ().idAttack;
+		GameObject attack = GameObject.FindGameObjectsWithTag ("Attack") [idAttack];
+        if (attack.GetComponentInChildren<AttackEnemy>() != null)
         {
-            coolDown = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AttackEnemy>().cooldown;
-            coolDownT = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AttackEnemy>().cooldownT;
+			coolDown = attack.GetComponentInChildren<AttackEnemy>().cooldown;
+			coolDownT = attack.GetComponentInChildren<AttackEnemy>().cooldownT;
         }
         else
         {
-            coolDown = GameObject.FindGameObjectWithTag("Player").GetComponent<AttackManager>().cooldown;
-            coolDownT = GameObject.FindGameObjectWithTag("Player").GetComponent<AttackManager>().cooldownT;
+			coolDown = attack.GetComponent<AttackManager>().cooldown;
+			coolDownT = attack.GetComponent<AttackManager>().cooldownT;
         }
         if (this.coolDownT <= 0) coolDownT = 0;
 

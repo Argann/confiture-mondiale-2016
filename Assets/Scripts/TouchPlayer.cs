@@ -3,12 +3,13 @@ using System.Collections;
 
 public class TouchPlayer : MonoBehaviour {
 
-    public Player player;
+    private Player player;
 
 	private bool onSpike, onFlame;
 
 	void Start() {
 		onSpike = false;
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
 	}
 	
 	void OnTriggerEnter2D(Collider2D hitbox) {

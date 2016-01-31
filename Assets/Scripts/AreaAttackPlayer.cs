@@ -36,6 +36,8 @@ public class AreaAttackPlayer : MonoBehaviour {
 	 
 	// Update is called once per frame
 	void Update () {
+		this.transform.rotation = GameObject.FindGameObjectWithTag ("Player").transform.rotation;
+
 		//center = gameObject.transform.position;
         //angle degree to radian
         rTheta = theta * Mathf.PI / 180;
