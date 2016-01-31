@@ -5,7 +5,7 @@ public class AttackPlayer : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D coll){
 		if (coll.gameObject.CompareTag ("Player")) {
-			coll.gameObject.GetComponent<Player>().Touched(5);
+			coll.gameObject.GetComponent<Player>().Touched(this.transform.parent.gameObject.GetComponent<Ennemy>().attackPower);
 		}
 	}
 }
