@@ -26,13 +26,15 @@ public class Player : MonoBehaviour {
     public int xp;
 
     //Gestionnaire de l'affichage des infos sur le joueur
-    public GUIManager guiManager;
+    private GUIManager guiManager;
 	
     void Start()
     {
+        guiManager = GameObject.Find("GUI").GetComponent<GUIManager>();
         guiManager.Level = level;
         guiManager.Ratio = xpMax;
         guiManager.XP = xp;
+
     }
 
 

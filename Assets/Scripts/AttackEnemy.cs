@@ -6,7 +6,8 @@ public class AttackEnemy : MonoBehaviour {
 
     public int damageAttack;
     public float cooldown = 1f;
-    private float cooldownT ;
+    [HideInInspector] // Hides var below
+    public float cooldownT ;
 
 
     private List<GameObject> ennemy_list;
@@ -21,8 +22,6 @@ public class AttackEnemy : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D(Collider2D coll){
-      
-
         if (coll.gameObject.tag == "Ennemy" && coll.gameObject.transform.GetComponent<Ennemy>() != null) {
 			this.ennemy_list.Add (coll.gameObject);
 		}
@@ -32,7 +31,6 @@ public class AttackEnemy : MonoBehaviour {
 		if (coll.gameObject.tag == "Ennemy" && coll.gameObject.transform.GetComponent<Ennemy>() != null) {
 			this.ennemy_list.Remove (coll.gameObject);
 		}
-
 	}
 
 	void Update(){
