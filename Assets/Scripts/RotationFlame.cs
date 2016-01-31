@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RotationFlame : MonoBehaviour {
 
+	public float coolDown ;
+	private float coolDownT ;
 	// Use this for initialization
 	void Start () {
 	

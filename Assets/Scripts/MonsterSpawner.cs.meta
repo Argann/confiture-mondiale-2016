@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 346d68b38cfcb0f43b59ab0786bb105b
+timeCreated: 1454208163
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - player: {fileID: 11465120, guid: 060876dc40db5314fbc4fb8b863f111d, type: 2}
+  - aquacreep_prefab: {fileID: 130184, guid: fc7253b204d66d04489400a92671ee00, type: 2}
+  - groundcreep_prefab: {fileID: 120760, guid: a631f8b33f23407448fb982740af835a, type: 2}
+  - darkcreep_prefab: {fileID: 118354, guid: af63c5e27091f344db74ed8f4cf0e9a2, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

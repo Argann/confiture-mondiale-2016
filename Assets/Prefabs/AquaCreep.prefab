@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 5
   maxHealth: 100
-  visionRange: 10
+  visionRange: 40
   attackRange: .5
   healthslider: {fileID: 115504}
 --- !u!114 &11425948
@@ -514,7 +514,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: visionRange
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130184}
