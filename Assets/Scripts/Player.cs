@@ -34,6 +34,7 @@ public class Player : MonoBehaviour {
         guiManager.Level = level;
         guiManager.Ratio = xpMax;
         guiManager.XP = xp;
+		SkillsState.playerLevel = level;
 
     }
 
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour {
         guiManager.XP = xp;
         guiManager.Ratio = xpMax;
         guiManager.Level = level;
+		SkillsState.playerLevel = level;
     }
 
     //A déclencher quand le joueur est touché

@@ -19,46 +19,67 @@ public class MonsterSpawner : MonoBehaviour {
 	public Dictionary<int, float> frequency_darkcreep;
 	
 	void Start(){
-		
+		Debug.Log ("Start 1");
 		frequency_aquacreep = new Dictionary<int, float> ();
 		frequency_darkcreep = new Dictionary<int, float> ();
 		frequency_groundcreep = new Dictionary<int, float> ();
 		
 		
-		/*for (int i=100; i > 90; i--) {
+		for (int i=100; i > 90; i--) {
 			frequency_aquacreep.Add(i, 1f);
 			frequency_darkcreep.Add(i, 0f);
 			frequency_groundcreep.Add(i, 0f);
 		}
-		
 		for (int i=90; i > 80; i--) {
 			frequency_aquacreep.Add(i, 1f);
 			frequency_darkcreep.Add(i, 0f);
 			frequency_groundcreep.Add(i, 2f);
 		}
-		
 		for (int i=80; i > 70; i--) {
 			frequency_aquacreep.Add(i, 0.8f);
 			frequency_darkcreep.Add(i, 1.5f);
 			frequency_groundcreep.Add(i, 2f);
 		}
-		
 		for (int i=70; i > 60; i--) {
 			frequency_aquacreep.Add(i, 1f);
 			frequency_darkcreep.Add(i, 1f);
 			frequency_groundcreep.Add(i, 2f);
 		}
-		*/
-		for (int i=60; i >= 50; i--) {
-			frequency_aquacreep.Add(i, 10f);
-			frequency_darkcreep.Add(i, 10f);
-			frequency_groundcreep.Add(i, 10f);
+		for (int i=60; i > 50; i--) {
+			frequency_aquacreep.Add(i, 1f);
+			frequency_darkcreep.Add(i, 1f);
+			frequency_groundcreep.Add(i, 2f);
+		}
+		for (int i=50; i > 40; i--) {
+			frequency_aquacreep.Add(i, 1f);
+			frequency_darkcreep.Add(i, 1f);
+			frequency_groundcreep.Add(i, 2f);
+		}
+		for (int i=40; i > 30; i--) {
+			frequency_aquacreep.Add(i, 1f);
+			frequency_darkcreep.Add(i, 1f);
+			frequency_groundcreep.Add(i, 2f);
+		}
+		for (int i=30; i > 20; i--) {
+			frequency_aquacreep.Add(i, 1f);
+			frequency_darkcreep.Add(i, 1f);
+			frequency_groundcreep.Add(i, 2f);
+		}
+		for (int i=20; i > 10; i--) {
+			frequency_aquacreep.Add(i, 1f);
+			frequency_darkcreep.Add(i, 1f);
+			frequency_groundcreep.Add(i, 2f);
+		}
+		for (int i=10; i > 0; i--) {
+			frequency_aquacreep.Add(i, 1f);
+			frequency_darkcreep.Add(i, 1f);
+			frequency_groundcreep.Add(i, 2f);
 		}
 
 		
-		this.aquacreep_cooldown = frequency_aquacreep[100];
-		this.darkcreep_cooldown = frequency_darkcreep[100];
-		this.groundcreep_cooldown = frequency_groundcreep[100];
+		this.aquacreep_cooldown = frequency_aquacreep[player.level];
+		this.darkcreep_cooldown = frequency_darkcreep[player.level];
+		this.groundcreep_cooldown = frequency_groundcreep[player.level];
 		
 	}
 	
