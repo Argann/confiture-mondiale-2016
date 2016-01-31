@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	//Niveau du joueur
 	public int level;
 
-	
+	public int shield = 0;
 	public Animator legs_animator;
 	
 	public Animator arms_animator;
@@ -51,7 +51,8 @@ public class Player : MonoBehaviour {
     //A déclencher quand le joueur est touché
     public void Touched(int damage)
     {
-        if (this.level < 100)
+		damage -= shield;
+        if (this.level < 100 && damage > 0)
         {
             xp += damage;
             guiManager.XP = xp;

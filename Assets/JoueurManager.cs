@@ -3,30 +3,32 @@ using System.Collections;
 //using System.Collections.;
 
 public class JoueurManager : MonoBehaviour {
-
-    public GameObject[] listeAttack;
-    private GameObject myAttack ;
-    public int idAttack = 0;
-    private int previousIdAttack;
-    // Use this for initialization
-    void Start () {
-        //donne le premier
-        myAttack = Instantiate(listeAttack[idAttack]) as GameObject;
-        myAttack.transform.parent = gameObject.transform;
-    }
 	
+    public int idAttack = 0;
+
+	void Start(){
+		idAttack = 0;
+	}
+
+
 	// Update is called once per frame
 	void Update () {
-        previousIdAttack = idAttack;
+		print (GameObject.FindGameObjectsWithTag ("Attack"));
         if (Input.GetKeyDown(KeyCode.Alpha1)) idAttack = 0;
         if (Input.GetKeyDown(KeyCode.Alpha2)) idAttack = 1;
         if (Input.GetKeyDown(KeyCode.Alpha3)) idAttack = 2;
+		if (Input.GetKeyDown(KeyCode.Alpha4)) idAttack = 3;
 
-        if (previousIdAttack != idAttack){
-            Vector3 pos = myAttack.transform.position;
-            Destroy(myAttack);
-            myAttack = Instantiate(listeAttack[idAttack], pos, Quaternion.identity) as GameObject;
-            myAttack.transform.parent = gameObject.transform;
-        }
+      /*  if (previousIdAttack != idAttack){
+			if(GameObject.FindGameObjectsWithTag("Attack")[previousIdAttack].GetComponent<AttackEnemy>() != null)
+				GameObject.FindGameObjectsWithTag("Attack")[previousIdAttack].GetComponent<AttackEnemy>().active =false;
+			else
+				GameObject.FindGameObjectsWithTag("Attack")[previousIdAttack].GetComponent<AttackManager>().active =false;
+		
+			if(GameObject.FindGameObjectsWithTag("Attack")[idAttack].GetComponent<AttackEnemy>() != null)
+				GameObject.FindGameObjectsWithTag("Attack")[idAttack].GetComponent<AttackEnemy>().active =true;
+			else
+				GameObject.FindGameObjectsWithTag("Attack")[idAttack].GetComponent<AttackManager>().active =true;
+        }*/
 	}
 }

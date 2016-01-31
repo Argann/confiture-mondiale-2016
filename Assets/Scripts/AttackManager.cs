@@ -9,6 +9,7 @@ public class AttackManager : MonoBehaviour {
     [HideInInspector] // Hides var below
     public float cooldownT;
 
+	public int myIdAttack ;
     void Start()
     {
         cooldownT = cooldown;
@@ -17,11 +18,14 @@ public class AttackManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        cooldownT -= Time.deltaTime;
-        if (cooldownT <= 0 && Input.GetMouseButtonDown(0))
-        {
-            cooldownT = cooldown;
-            Instantiate(fireBall, transform.position, transform.rotation);
-        }
+		int idAttack  = GameObject.Find("JoueurPrefab").GetComponent<JoueurManager>().idAttack ;
+		if (myIdAttack == idAttack) {
+			this.transform.position = GameObject.FindGameObjectWithTag ("Player").transform.position;
+			cooldownT -= Time.deltaTime;
+			if (cooldownT <= 0 && Input.GetMouseButtonDown (0)) {
+				cooldownT = cooldown;
+				Instantiate (fireBall, transform.position, transform.rotation);
+			}
+		}
     }
 }
