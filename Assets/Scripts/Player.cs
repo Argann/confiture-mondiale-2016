@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
     public int xp;
 
     //Gestionnaire de l'affichage des infos sur le joueur
-    private GUIManager guiManager;
+    public GUIManager guiManager;
 	
     void Start()
     {
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (this.guiManager == null) {
-			guiManager = GameObject.Find("GUI").GetComponent<GUIManager>();
+			guiManager = GameObject.Find("XPBar").GetComponent<GUIManager>();
 			guiManager.Level = level;
 			guiManager.Ratio = xpMax;
 			guiManager.XP = xp;
