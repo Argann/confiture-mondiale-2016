@@ -7,7 +7,6 @@ public class AreaAttackPlayer : MonoBehaviour {
     public float theta = 45f;
     public float distance = 2f;
     private PolygonCollider2D polygon;
-
     private Vector2 center, left, right, front; 
 
     private float rTheta ;

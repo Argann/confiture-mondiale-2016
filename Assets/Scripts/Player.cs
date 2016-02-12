@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
         xp = (levelup ? 0 : xpMax);
         guiManager.XP = xp;
         guiManager.Ratio = xpMax;
-        guiManager.Level = level;
+        guiManager.Level = level; 
 		SkillsState.playerLevel = level;
     }
 

@@ -10,6 +10,7 @@ public class AttackManager : MonoBehaviour {
     public float cooldownT;
 
 	public int myIdAttack ;
+
     void Start()
     {
         cooldownT = cooldown;
