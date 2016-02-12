@@ -24,7 +24,7 @@ public class Shield : MonoBehaviour {
 		if (myIdAttack == idAttack) {
 
 			gameObject.GetComponent<Animator>().SetBool ("isShielding", true);
-			if (Input.GetMouseButtonDown (0) && cooldownT <= 0) {
+			if (Input.GetMouseButtonDown (1) && cooldownT <= 0) {
 				cooldownT = cooldown;
 				player.shield = shield;
 			}

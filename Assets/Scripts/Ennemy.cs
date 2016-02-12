@@ -6,14 +6,14 @@ public class Ennemy : MonoBehaviour {
 
 	public int attackPower;
 	public int maxHealth;
-	private int health;
+	protected int health;
 	public float visionRange;
 	public float attackRange;
 	public GameObject healthslider;
 
-	private GameObject parent;
+	protected GameObject parent;
 
-	private GameObject player;
+	protected GameObject player;
 
 	// Use this for initialization
 	void Start () {

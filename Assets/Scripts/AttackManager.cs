@@ -10,6 +10,7 @@ public class AttackManager : MonoBehaviour {
     public float cooldownT;
 
 	public int myIdAttack ;
+
     void Start()
     {
         cooldownT = cooldown;
@@ -22,7 +23,7 @@ public class AttackManager : MonoBehaviour {
 		if (myIdAttack == idAttack) {
 			this.transform.position = GameObject.FindGameObjectWithTag ("Player").transform.position;
 			cooldownT -= Time.deltaTime;
-			if (cooldownT <= 0 && Input.GetMouseButtonDown (0)) {
+			if (cooldownT <= 0 && Input.GetMouseButtonDown (1)) {
 				cooldownT = cooldown;
 				Instantiate (fireBall, transform.position, transform.rotation);
 			}

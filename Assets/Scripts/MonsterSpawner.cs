@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using NewScripts;
 
 public class MonsterSpawner : MonoBehaviour {
 	
-	private Player player;
+	private PlayerManager player;
 
 	private bool activate;
 	
@@ -21,8 +22,8 @@ public class MonsterSpawner : MonoBehaviour {
 	public Dictionary<int, float> frequency_darkcreep;
 
 	void Awake(){
-		GameObject go = GameObject.FindGameObjectWithTag ("PlayerPrefab");
-		this.player = go.transform.Find ("playerLogic").GetComponent<Player> ();
+		//GameObject go = GameObject.FindGameObjectWithTag ("Player");
+		this.player = GameObject.Find("Player").GetComponent<PlayerManager> ();
 	}
 	
 	void Start(){
@@ -126,13 +127,13 @@ public class MonsterSpawner : MonoBehaviour {
 
 
 	void OnTriggerEnter2D(Collider2D coll){
-		if (coll.gameObject.CompareTag ("Player")) {
+		if (coll.gameObject.CompareTag(player.gameObject.tag)) {
 			this.activate = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D coll){
-		if (coll.gameObject.CompareTag ("Player")) {
+		if (coll.gameObject.CompareTag(player.gameObject.tag)) {
 			this.activate = false;
 		}
 	}

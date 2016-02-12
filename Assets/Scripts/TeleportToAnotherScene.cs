@@ -5,19 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TeleportToAnotherScene : MonoBehaviour
 {
-	public Image FadeImg;
-	public float fadeSpeed = 5f;
+	//public Image FadeImg;
+	public float fadeSpeed;
 	public string level;
 	private bool sceneStarting = true;
 	private bool sceneEnding = false;
+	public bool destroyPlayer = false;
 
 
 	void Awake()
 	{
-		FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
+		//FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		// If the scene is starting...
 		if (sceneStarting)
@@ -32,14 +33,14 @@ public class TeleportToAnotherScene : MonoBehaviour
 	void FadeToClear()
 	{
 		// Lerp the colour of the image between itself and transparent.
-		FadeImg.color = Color.Lerp(FadeImg.color, Color.clear, fadeSpeed * Time.deltaTime);
+		//FadeImg.color = Color.Lerp(FadeImg.color, Color.clear, fadeSpeed * Time.deltaTime);
 	}
 
 
 	void FadeToBlack()
 	{
 		// Lerp the colour of the image between itself and black.
-		FadeImg.color = Color.Lerp(FadeImg.color, Color.black, fadeSpeed * Time.deltaTime);
+		//FadeImg.color = Color.Lerp(FadeImg.color, Color.black, fadeSpeed * Time.deltaTime);
 	}
 
 
@@ -49,15 +50,15 @@ public class TeleportToAnotherScene : MonoBehaviour
 		FadeToClear();
 
 		// If the texture is almost clear...
-		if (FadeImg.color.a <= 0.05f)
-		{
-			// ... set the colour to clear and disable the RawImage.
-			FadeImg.color = Color.clear;
-			FadeImg.enabled = false;
+		//if (FadeImg.color.a <= 0.05f)
+		//{
+		//	// ... set the colour to clear and disable the RawImage.
+		//	FadeImg.color = Color.clear;
+		//	FadeImg.enabled = false;
 
 			// The scene is no longer starting.
 			sceneStarting = false;
-		}
+		//}
 	}
 
 
@@ -69,18 +70,18 @@ public class TeleportToAnotherScene : MonoBehaviour
 		FadeToBlack();
 
 		// If the screen is almost black...
-		if (FadeImg.color.a >= 0.95f) {
+		//if (FadeImg.color.a >= 0.95f) {
 			// ... reload the level
-			GameObject go = GameObject.FindGameObjectWithTag ("PlayerPrefab");
+			GameObject go = GameObject.FindGameObjectWithTag("Player").transform.parent.gameObject;
 			DontDestroyOnLoad (go);
 			SceneManager.LoadScene (level, LoadSceneMode.Single);
-		}
+		//}
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
 		if(coll.gameObject.CompareTag("Player")){
 			sceneEnding = true;
-			FadeImg.enabled = true;
+			//FadeImg.enabled = true;
 		}
 
 	}

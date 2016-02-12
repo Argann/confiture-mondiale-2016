@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: eeb69f13d6a93234c9ef2ea2b0005705
+timeCreated: 1454243043
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprite-septimus_Plan de travail 2_0
+    21300002: sprite-septimus_Plan de travail 2_1
+    21300004: sprite-septimus_Plan de travail 2_2
+    21300006: sprite-septimus_Plan de travail 2_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite-septimus_Plan de travail 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112.5
+        height: 117
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.44855332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.499996, y: 5.5192604}
+        - {x: -23.499996, y: -3.4807396}
+        - {x: 14.500004, y: -3.4807396}
+        - {x: 14.500004, y: 9.51926}
+        - {x: 13.500004, y: 11.51926}
+        - {x: -6.499996, y: 25.51926}
+        - {x: -21.499996, y: 25.51926}
+        - {x: -29.499996, y: 22.51926}
+      - - {x: -7.499996, y: 19.51926}
+        - {x: -9.499996, y: 17.51926}
+        - {x: -9.499996, y: 15.51926}
+        - {x: -7.499996, y: 13.51926}
+        - {x: -5.499996, y: 13.51926}
+        - {x: -3.4999962, y: 15.51926}
+        - {x: -3.4999962, y: 17.51926}
+        - {x: -5.499996, y: 19.51926}
+    - name: sprite-septimus_Plan de travail 2_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112.5
+        height: 117
+      alignment: 9
+      pivot: {x: 0.48216513, y: 0.44169375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.493576, y: -4.6781693}
+        - {x: 16.506424, y: -4.6781693}
+        - {x: 16.506424, y: 18.32183}
+        - {x: 0.50642395, y: 34.32183}
+        - {x: -16.493576, y: 34.32183}
+        - {x: -33.493576, y: 25.32183}
+      - - {x: -3.493576, y: 20.32183}
+        - {x: -3.493576, y: 19.32183}
+        - {x: -0.49357605, y: 16.32183}
+        - {x: 2.506424, y: 17.32183}
+        - {x: 2.506424, y: 20.32183}
+        - {x: 0.50642395, y: 22.32183}
+        - {x: -1.493576, y: 22.32183}
+    - name: sprite-septimus_Plan de travail 2_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112.5
+        height: 117
+      alignment: 9
+      pivot: {x: 0.48573214, y: 0.44512352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.894867, y: 35.920547}
+        - {x: -22.894867, y: 28.920547}
+        - {x: -22.894867, y: 19.920547}
+        - {x: -17.894867, y: -5.0794525}
+        - {x: -14.894867, y: -6.0794525}
+        - {x: 19.105133, y: -6.0794525}
+        - {x: 19.105133, y: 25.920547}
+        - {x: 11.105133, y: 35.920547}
+    - name: sprite-septimus_Plan de travail 2_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112.5
+        height: 117
+      alignment: 9
+      pivot: {x: 0.48216498, y: 0.43826398}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.493561, y: 37.723114}
+        - {x: -9.493561, y: 35.723114}
+        - {x: -5.493561, y: 23.723114}
+        - {x: -6.493561, y: 24.723114}
+        - {x: -14.493561, y: 23.723114}
+        - {x: -14.493561, y: -2.276886}
+        - {x: -13.493561, y: -4.276886}
+        - {x: 22.50644, y: -4.276886}
+        - {x: 25.50644, y: 5.723114}
+        - {x: 25.50644, y: 31.723114}
+        - {x: 12.506439, y: 37.723114}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour {
 
-    public Player player;
+    private Player player;
     private int lastLevel;
     
-
+	void Start(){
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+	}
 
     void Update()
     {
@@ -49,6 +51,5 @@ public class ButtonManager : MonoBehaviour {
             default:
                 break;
         }
-        //TODO
     }
 }
